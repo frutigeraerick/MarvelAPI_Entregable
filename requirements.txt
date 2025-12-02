@@ -1,11 +1,12 @@
 fastapi
 uvicorn
 sqlalchemy
+sqlmodel
 pydantic
 pydantic-settings
 reportlab
 python-dotenv
-supabase
+supabase-py
 jinja2
 aiofiles
 pandas
