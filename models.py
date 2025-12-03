@@ -3,6 +3,14 @@ from sqlalchemy.orm import relationship
 from database import Base
 
 
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String(200), unique=True, nullable=False)
+    password_hash = Column(String(300), nullable=False)
+    created_at = Column(Date)
+
 class Team(Base):
     __tablename__ = "teams"
 
@@ -49,4 +57,5 @@ class CharacterTeam(Base):
     team_id = Column(Integer, ForeignKey("teams.id"))
 
     character = relationship("Character", back_populates="teams")
+
     team = relationship("Team", back_populates="members")
